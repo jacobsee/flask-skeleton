@@ -1,0 +1,28 @@
+---
+openshift_cluster_content:
+- object: app-builds
+  content:
+  - name: flask-build
+    template: "{{ playbook_dir }}/templates/flask-build.yml"
+    params: "{{ playbook_dir }}/params/build"
+    namespace: "{{ ci_cd_namespace }}"
+    tags:
+    - build
+- object: deploy-dev
+  content:
+  - name:  flask
+    template: "{{ playbook_dir }}/templates/flask-deploy.yml"
+    params: "{{ playbook_dir }}/params/dev"
+    namespace: "{{ dev_namespace }}"
+    tags:
+    - deploy
+    - dev
+- object: deploy-test
+  content:
+  - name:  flask
+    template: "{{ playbook_dir }}/templates/flask-deploy.yml"
+    params: "{{ playbook_dir }}/params/test"
+    namespace: "{{ test_namespace }}"
+    tags:
+    - deploy
+    - test

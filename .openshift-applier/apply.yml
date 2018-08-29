@@ -1,0 +1,10 @@
+---
+- name: Build and Deploy Flask
+  hosts: app
+  vars:
+    ci_cd_namespace: flask-ci-cd
+    dev_namespace: flask-dev
+    test_namespace: flask-test
+  tasks:
+    - include_role:
+        name: openshift-applier/roles/openshift-applier
