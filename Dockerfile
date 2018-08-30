@@ -8,7 +8,7 @@ WORKDIR /app
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-ENV FLASK_APP=src/app.py
+ENV FLASK_APP=/app/app
 ENV FLASK_DEBUG=0
 
 CMD ["flask", "run"]

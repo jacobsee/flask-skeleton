@@ -2,7 +2,7 @@
 - name: Build and Deploy Flask
   hosts: app
   vars:
-    ci_cd_namespace: flask-ci-cd
+    ci_cd_namespace: labs-ci-cd
     dev_namespace: flask-dev
     test_namespace: flask-test
   tasks:
