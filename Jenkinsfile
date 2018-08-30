@@ -12,7 +12,7 @@ pipeline {
         JENKINS_TAG = "${JOB_NAME}.${BUILD_NUMBER}".replace("/", "-")
         JOB_NAME = "${JOB_NAME}".replace("/", "-")
         NEXUS_SERVICE_HOST = 'nexus'
-        NEXUS_SERVICE_PORT = '8080'
+        NEXUS_SERVICE_PORT = '8081'
     }
 
     options {
