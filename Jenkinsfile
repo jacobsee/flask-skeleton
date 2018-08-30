@@ -63,9 +63,9 @@ pipeline {
             }
             steps {
                 sh 'python --version'
-                sh 'python -m virtualenv env'
-                sh 'source env/bin/activate'
-                sh 'pip install -r requirements.txt'
+                //sh 'python -m virtualenv env'
+                //sh 'source env/bin/activate'
+                sh 'pip install -r requirements.txt --user'
                 sh 'pytest --junitxml=test-report.xml'
                 sh 'zip -r package-contents.zip package-contents'
                 sh 'curl -vvv -u admin:admin123 --upload-file package-contents.zip http://${NEXUS_SERVICE_HOST}:${NEXUS_SERVICE_PORT}/repository/zip/com/redhat/${APP_NAME}/${JOB_NAME}.${BUILD_NUMBER}/package-contents.zip'
